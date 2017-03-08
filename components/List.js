@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container, Content, Card, CardItem, Body } from 'native-base';
 import {
   AppRegistry,
   StyleSheet,
@@ -13,9 +14,19 @@ const showList = (props) => {
     {
       props.datas.map((data, index) => {
         return(
-          <Text style={styles.newslist} key={index}>
-            {data.title}
-          </Text>
+          <Card key={index}>
+              <CardItem>
+                  <Text style={styles.judul}>{data.title}</Text>
+              </CardItem>
+
+              <CardItem>
+                <Body>
+                  <Text style={styles.newslist}>link: {data.url}</Text>
+                  <Text style={styles.footer}>author: {data.author}</Text>
+
+                </Body>
+              </CardItem>
+         </Card>
         )
       })
     }
@@ -40,10 +51,23 @@ export const List = (props) => {
 
 const styles = StyleSheet.create({
   newslist:{
-    textAlign: 'center',
-    fontFamily: 'Cochin',
+    // textAlign: 'center',
+    fontFamily: 'Chalkboard SE',
     fontSize:9,
-    marginTop: 10,
+    color: '#283593'
+    // marginTop: 10,
+  },
+  footer:{
+    // textAlign: 'center',
+    fontFamily: 'Chalkboard SE',
+    fontSize:9,
+    // marginTop: 10,
+  },
+  judul:{
+    // textAlign: 'center',
+    fontFamily: 'Chalkboard SE',
+    fontSize:14,
+    // marginTop: 10,
   },
     loadingAnimation: {
     width: 40,

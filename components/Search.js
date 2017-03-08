@@ -18,7 +18,7 @@ searchInput:{
     width: '100%',
     height: 20,
     backgroundColor:'white',
-    borderColor: 'black',
+    borderColor: '#E0E0E0',
     borderWidth: 1,
     textAlign: 'center',
     fontSize:10,

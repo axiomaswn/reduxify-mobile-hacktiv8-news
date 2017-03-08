@@ -21,35 +21,29 @@ class PeopleScene extends Component {
       <View style={styles.container}>
 
         <View style={styles.header}>
-          <Text style={styles.welcome}>
-            People List
-          </Text>
           <Image
-            style={styles.newspaper}
-            source={{uri: 'https://image.flaticon.com/icons/png/512/46/46799.png'}}
+            style={styles.starwarslogo}
+            source={{uri: 'https://lumiere-a.akamaihd.net/v1/images/ep_vii_logo_a87c8864.png?region=0%2C0%2C325%2C180&width=320'}}
           />
-          <Text style={styles.instructions}>
-            Search
-          </Text>
           <View style={styles.searchForm}>
             <Search style={styles.searchInput} handleChange={this.handleChange}/>
           </View>
         </View>
 
-        <Button small warning full onPress={() => {
+        <Button small light full onPress={() => {
             this.props.navigator.pop()
           }}>
-          <Text>Go to Hacktiv8 News</Text>
+          <Text>Go to Redux News</Text>
         </Button>
-          <View >
-            {
-              this.props.peoples.map((data,index) => {
-                return (
-                  <Text key={index}>{data.title}</Text>
-                )
-              })
-            }
-          </View>
+        <View >
+          {
+            this.props.peoples.map((data,index) => {
+              return (
+                <Text style={styles.newslist} key={index}>{data.title}</Text>
+              )
+            })
+          }
+        </View>
       </View>
     );
   }
@@ -71,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   header: {
-    backgroundColor: '#FFC107',
+    backgroundColor: 'white',
     flexDirection: 'column',
     width: '100%',
     paddingTop: 20,
@@ -81,26 +75,14 @@ const styles = StyleSheet.create({
   searchForm:{
     width:'50%',
   },
-  newspaper: {
-    width: 40,
-    height: 40
+  starwarslogo: {
+    width: 180,
+    height: 90
   },
-  welcome: {
-    fontWeight:'bold',
-    color:'white',
-    fontFamily: 'Cochin',
-    fontSize: 20,
-    margin: 10,
-  },
-  instructions: {
-    color:'white',
-    marginBottom: 5,
-    fontFamily: 'Cochin',
-  },
-  buttonNavigator: {
-    color: 'red',
-    fontSize: 15,
-    marginBottom: 5,
-    fontFamily: 'Cochin',
+  newslist:{
+    textAlign: 'center',
+    fontFamily: 'Chalkboard SE',
+    fontSize:9,
+    marginTop: 10,
   },
 });

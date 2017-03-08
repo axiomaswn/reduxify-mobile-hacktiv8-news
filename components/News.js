@@ -24,7 +24,7 @@ export default class NewsScene extends Component {
   }
   componentWillMount() {
     const appThis = this
-    fetch('http://hn.algolia.com/api/v1/search?query=react')
+    fetch('http://hn.algolia.com/api/v1/search?query=redux')
     .then(function(res) {
       return res.json();
     })
@@ -45,27 +45,21 @@ export default class NewsScene extends Component {
       <View style={styles.container}>
 
         <View style={styles.header}>
-          <Text style={styles.welcome}>
-            Hacktiv8 News!
-          </Text>
           <Image
-            style={styles.newspaper}
-            source={{uri: 'https://cdn2.iconfinder.com/data/icons/perfect-flat-icons-2/512/Newspaper_news_rss_vector_paper_symbol_simple.png'}}
+            style={styles.logoredux}
+            source={{uri: 'https://raw.githubusercontent.com/reactjs/redux/master/logo/logo-title-dark.png'}}
           />
-          <Text style={styles.instructions}>
-            Search
-          </Text>
           <View style={styles.searchForm}>
             <Search  handleChange={this.handleChange}/>
           </View>
         </View>
-        <Button small info full onPress={() => {
+        <Button small light full onPress={() => {
             this.props.navigator.push({
               title: 'People Scene',
               index: 1
             })
           }}>
-          <Text>Go to People List</Text>
+          <Text>Go to SWAPI</Text>
         </Button>
         <ScrollView >
           <List datas={this.state.datas.filter(data => {
@@ -85,7 +79,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   header: {
-    backgroundColor: '#2196F3',
+    backgroundColor: 'white',
     flexDirection: 'column',
     width: '100%',
     paddingTop: 20,
@@ -95,20 +89,8 @@ const styles = StyleSheet.create({
   searchForm:{
     width:'50%',
   },
-  newspaper: {
-    width: 40,
-    height: 40
-  },
-  welcome: {
-    color:'white',
-    fontWeight:'bold',
-    fontFamily: 'Cochin',
-    fontSize: 20,
-    margin: 10,
-  },
-  instructions: {
-    color: 'white',
-    marginBottom: 5,
-    fontFamily: 'Cochin',
+  logoredux: {
+    width: 180,
+    height: 90
   },
 });
