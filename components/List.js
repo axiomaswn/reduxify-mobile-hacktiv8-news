@@ -14,7 +14,7 @@ const showList = (props) => {
     {
       props.datas.map((data, index) => {
         return(
-          <Card key={index}>
+          <Card key={index} >
               <CardItem>
                   <Text style={styles.judul}>{data.title}</Text>
               </CardItem>
@@ -51,23 +51,17 @@ export const List = (props) => {
 
 const styles = StyleSheet.create({
   newslist:{
-    // textAlign: 'center',
     fontFamily: 'Chalkboard SE',
     fontSize:9,
     color: '#283593'
-    // marginTop: 10,
   },
   footer:{
-    // textAlign: 'center',
     fontFamily: 'Chalkboard SE',
     fontSize:9,
-    // marginTop: 10,
   },
   judul:{
-    // textAlign: 'center',
     fontFamily: 'Chalkboard SE',
     fontSize:14,
-    // marginTop: 10,
   },
     loadingAnimation: {
     width: 40,
